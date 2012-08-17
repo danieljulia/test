@@ -2,7 +2,7 @@
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/1.0"
 	id		= "com.phonegap.getting.started"
-	version 	= "0.0.2">
+	version 	= "0.0.3">
 
 	<name>Agenda Oberta</name>
 
@@ -21,7 +21,9 @@
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
 	<access origin="http://oberta.cat" subdomains="true" />
-
+	<access origin="http://www.oberta.cat" subdomains="true" />
+	<access origin="*" />
+	
 	<preference name="orientation" value="portrait" />
 	<preference name="stay-in-webview" value="true" />
 </widget>
