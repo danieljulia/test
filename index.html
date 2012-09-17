@@ -23,6 +23,15 @@
 	</head>
 	<body>
  		<a href="http://www.oberta.cat/web">Anar a oberta.cat</a>
-blah
+<script>
+navigator.geolocation.getCurrentPosition(function (position) {
+                alert( position.coords.latitude + " "+ position.coords.longitude );
+                var lat=position.coords.latitude;
+                var lng=position.coords.longitude;
+                
+                  window.location="http://oberta.cat/web/?lat="+lat+"&lng="+lng;
+});
+                
+</script>
 	</body>
 </html>
