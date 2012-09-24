@@ -24,6 +24,8 @@
 	<access origin="http://www.oberta.cat" subdomains="true" />
 	<access origin="*" />
 	
-	<preference name="orientation" value="portrait" />
+	<gap:plugin name="share">
+	
+	
 	<preference name="stay-in-webview" value="true" />
 </widget>

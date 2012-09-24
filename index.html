@@ -3,35 +3,60 @@
 	<head>
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width" />
 		<title>Agenda Oberta</title>
-		<link rel="stylesheet" href="assets/css/master.css" type="text/css" media="screen" />
-		
+	
 		<script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/xui.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/lawnchair/adaptors/LawnchairAdaptorHelpers.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/lawnchair/adaptors/DOMStorageAdaptor.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/lawnchair/adaptors/WebkitSQLiteAdaptor.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/lawnchair/Lawnchair.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/dsl.js" type="text/javascript" charset="utf-8"></script>
-	
-	
+		<script src="share.js"></script>
+	<style>
+body {  background-color: #c90;
+margin: 0;
+padding: 0;
+height: 100%;
+
+}
+
+#splash {
+ background: url(assets/img/logo_splash.png) center no-repeat #c90;
+width: 80%;
+max-width: 381px;
+height: 100%;
+min-height: 320px;
+background-size: contain;
+margin: 0 auto; }
+
+#info {
+
+
+}
+
+</style>
 	</head>
 	<body>
- 		<a href="http://www.oberta.cat/web">Anar a oberta.cat</a>
+		<p id="info">Carregant posició geogràfica...</p>
+ 
+		<a href="javascript:doShare()">share</a>
+<div id="splash">
+
+</div>
+
 <script>
 navigator.geolocation.getCurrentPosition(function (position) {
-                alert( position.coords.latitude + " "+ position.coords.longitude );
+               // alert( position.coords.latitude + " "+ position.coords.longitude );
                 var lat=position.coords.latitude;
                 var lng=position.coords.longitude;
-                
-                  window.location="http://oberta.cat/web/?lat="+lat+"&lng="+lng;
+                window.location="http://oberta.cat/web/?lat="+lat+"&lng="+lng;
 });
-                
+
+function doShare(){
+	var share = new Share();
+	share.show({
+		subject: 'M\'agrada Agenda Oberta',
+		text: 'http://www.oberta.cat'},
+		function() {}, // Success function
+		function() {alert('Ha fallat compartir')} // Failure function
+
+	);
+
+}                
 </script>
-	</body>
+</body>
 </html>
