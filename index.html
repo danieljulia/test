@@ -40,13 +40,21 @@ margin: 0 auto; }
 
 <script>
 navigator.geolocation.getCurrentPosition(function (position) {
-               // alert( position.coords.latitude + " "+ position.coords.longitude );
+               alert( position.coords.latitude + " "+ position.coords.longitude );
                 var lat=position.coords.latitude;
                 var lng=position.coords.longitude;
                 window.location="http://oberta.cat/web/?lat="+lat+"&lng="+lng;
 });
 
 function doShare(){
+	window.plugins.share.show({
+		subject: 'I like turtles',
+		text: 'http://www.mndaily.com'},
+		function() {}, // Success function
+		function() {alert('Share failed')} // Failure function
+	);
+
+	/*
 	var share = new Share();
 	share.show({
 		subject: 'M\'agrada Agenda Oberta',
@@ -54,7 +62,7 @@ function doShare(){
 		function() {}, // Success function
 		function() {alert('Ha fallat compartir')} // Failure function
 
-	);
+	);*/
 
 }                
 </script>
