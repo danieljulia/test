@@ -22,9 +22,9 @@
 
 	<access origin="http://oberta.cat" subdomains="true" />
 	<access origin="http://www.oberta.cat" subdomains="true" />
-	<access origin="*" />
+	<access origin="http://api.oberta.cat" />
 	
-	<gap:plugin name="share"/>
+	<gap:plugin name="share" value="com.schaul.plugins.share.Share"/>
 	
 	
 	<preference name="stay-in-webview" value="true" />

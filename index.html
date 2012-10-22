@@ -29,12 +29,38 @@ margin: 0 auto; }
 }
 
 </style>
+<script>
+$(document).ready(function(){
+	$('#splash').show('slow');
+	checkConnection();
+
+});
+
+function checkConnection(){
+var url = “http://maps.google.com”;
+$.ajax({
+type: “GET”,
+data: “{}”,
+url: url,
+cache: false,
+timeout: 10 * 1000,
+success:function(response)
+{
+//do something great!
+},
+error:function(xhr, textStatus, errorThrown) {
+alert(“No hi ha connexió d'internet. Torna a provar-ho més tard.”);
+}
+});
+
+}
+</script>
 	</head>
 	<body>
 		<p id="info">Carregant posició geogràfica...</p>
  
 		<a href="javascript:doShare()">share</a>
-<div id="splash">
+<div id="splash" style="display:none">
 
 </div>
 
