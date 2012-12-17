@@ -23,9 +23,10 @@
 	<access origin="http://oberta.cat" subdomains="true" />
 	<access origin="http://www.oberta.cat" subdomains="true" />
 	<access origin="http://api.oberta.cat" />
-	
-	<gap:plugin name="share" value="com.schaul.plugins.share.Share"/>
-	
+
+	<access origin="http://www.twitter.com" subdomains="true" />
+	<access origin="http://www.facebook.com" subdomains="true" />	
+
 	
 	<preference name="stay-in-webview" value="true" />
 </widget>
